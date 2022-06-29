@@ -1,9 +1,6 @@
-generator-play-ideia
-====================
+# generator-play-ideia
 
-*A generator for [Yeoman](http://yeoman.io/) when you need to quickly play web application with an idea.*
-
-![alt tag](http://emalherbi.github.io/generator-play-ideia/img/yeoman-banner.jpg)
+_A generator for [Yeoman](http://yeoman.io/) when you need to quickly play web application with an idea._
 
 ## What's Yeoman (yo)?
 
@@ -54,14 +51,14 @@ app/
     ├── app.js
 ```
 
-*The bower dependencies are installed in another directory.*
+_The bower dependencies are installed in another directory._
 
 ## How This Generator Works
 
 After finishing the implementation of your application, simply run the following command to deploy your project.
 
 ```javascript
-grunt
+grunt;
 ```
 
 ## Contributing
