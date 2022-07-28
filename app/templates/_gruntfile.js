@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   'use strict';
 
   // Load the plugin that clean files and directories.
@@ -40,9 +40,9 @@ module.exports = function(grunt) {
     of the files (e.g concatenated, uglifyjs-ed ...) */
     useminPrepare: {
       html: '<%= properties.src %>/index.html',
-        options: {
-          dest: '<%= properties.dist %>'
-        }
+      options: {
+        dest: '<%= properties.dist %>',
+      },
     },
 
     /* html minification */
@@ -53,25 +53,29 @@ module.exports = function(grunt) {
         //  removeComments: true,
         //  collapseWhitespace: true
         //},
-        files: [{
-          expand: true,
-          cwd: '<%= properties.src %>',
-          src: ['*.html'],
-          dest: '<%= properties.dist %>'
-        }]
-      }
+        files: [
+          {
+            expand: true,
+            cwd: '<%= properties.src %>',
+            src: ['*.html'],
+            dest: '<%= properties.dist %>',
+          },
+        ],
+      },
     },
 
     /* image minification */
     imagemin: {
       dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= properties.src %>/img',
-          src: '{,*/}*.{ico,png,jpg,jpeg,gif,webp,svg}',
-          dest: '<%= properties.dist %>/img'
-        }]
-      }
+        files: [
+          {
+            expand: true,
+            cwd: '<%= properties.src %>/img',
+            src: '{,*/}*.{ico,png,jpg,jpeg,gif,webp,svg}',
+            dest: '<%= properties.dist %>/img',
+          },
+        ],
+      },
     },
 
     /* cssmin */
@@ -80,15 +84,15 @@ module.exports = function(grunt) {
     /* js file minification */
     uglify: {
       options: {
-        preserveComments: false
-      }
+        preserveComments: false,
+      },
     },
 
     /* create dir fonts */
     mkdir: {
       all: {
         options: {
-          create: ['<%= properties.dist %>/fonts']
+          create: ['<%= properties.dist %>/fonts'],
         },
       },
     },
@@ -96,21 +100,24 @@ module.exports = function(grunt) {
     /* put files not handled in other tasks here */
     copy: {
       dist: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= properties.src %>',
-          dest: '<%= properties.dist %>',
-          src: ['*.txt', '.htaccess']
-        }, {
-          /* fonts bootstrap */
-          expand: true,
-          dot: true,
-          cwd: '<%= properties.fonts %>',
-          dest: '<%= properties.dist %>/fonts',
-          src: ['*.ttf', '*.woff']
-        }]
-      }
+        files: [
+          {
+            expand: true,
+            dot: true,
+            cwd: '<%= properties.src %>',
+            dest: '<%= properties.dist %>',
+            src: ['*.txt', '.htaccess'],
+          },
+          {
+            /* fonts bootstrap */
+            expand: true,
+            dot: true,
+            cwd: '<%= properties.fonts %>',
+            dest: '<%= properties.dist %>/fonts',
+            src: ['*.ttf', '*.woff'],
+          },
+        ],
+      },
     },
 
     /* cache busting */
@@ -118,58 +125,40 @@ module.exports = function(grunt) {
       options: {
         encoding: 'utf8',
         algorithm: 'md5',
-        length: 8
+        length: 8,
       },
       files: {
-        src: [
-          '<%= properties.dist %>/js/{,*/}*.js',
-          '<%= properties.dist %>/css/{,*/}*.css',
-          '<%= properties.dist %>/img/{,*/}*.{ico,png,jpg,jpeg,gif,webp,svg}'
-        ]
-      }
+        src: ['<%= properties.dist %>/js/{,*/}*.js', '<%= properties.dist %>/css/{,*/}*.css', '<%= properties.dist %>/img/{,*/}*.{ico,png,jpg,jpeg,gif,webp,svg}'],
+      },
     },
 
     /* replace links to minificated files */
     usemin: {
       html: ['<%= properties.dist %>/index.html'],
-        options: {
-          dirs: ['<%= properties.dist %>']
-        }
+      options: {
+        dirs: ['<%= properties.dist %>'],
+      },
     },
 
     /* html minification */
     html_minify: {
-      options: { },
+      options: {},
       all: {
-        files:[{
-          expand: true,
-          cwd: '<%= properties.dist %>',
-          src: ['*.html'],
-          dest: '<%= properties.dist %>',
-          ext:'.html'
-        }]
-      }
-    }
-
+        files: [
+          {
+            expand: true,
+            cwd: '<%= properties.dist %>',
+            src: ['*.html'],
+            dest: '<%= properties.dist %>',
+            ext: '.html',
+          },
+        ],
+      },
+    },
   });
 
   // tasks
-  grunt.registerTask('build', [
-    'clean',
-    'useminPrepare',
-    'htmlmin',
-    'imagemin',
-    'concat',
-    'cssmin',
-    'uglify',
-    'mkdir',
-    'copy',
-    'rev',
-    'usemin',
-    'html_minify'
-  ]);
+  grunt.registerTask('build', ['clean', 'useminPrepare', 'htmlmin', 'imagemin', 'concat', 'cssmin', 'uglify', 'mkdir', 'copy', 'rev', 'usemin', 'html_minify']);
 
-  grunt.registerTask('default', [
-    'build'
-  ]);
+  grunt.registerTask('default', ['build']);
 };

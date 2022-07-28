@@ -1,88 +1,62 @@
-/* app css stylesheet */
-.browsehappy {
-  background: rgb(14,14,14); /* Old browsers */
-  background: -moz-linear-gradient(-45deg,  rgba(14,14,14,1) 20%, rgba(125,126,125,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(20%,rgba(14,14,14,1)), color-stop(100%,rgba(125,126,125,1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg,  rgba(14,14,14,1) 20%,rgba(125,126,125,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg,  rgba(14,14,14,1) 20%,rgba(125,126,125,1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg,  rgba(14,14,14,1) 20%,rgba(125,126,125,1) 100%); /* IE10+ */
-  background: linear-gradient(135deg,  rgba(14,14,14,1) 20%,rgba(125,126,125,1) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e0e0e', endColorstr='#7d7e7d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
-  color: #FFFFFF;
-  margin: 0 0 1em;
-  padding: 0.2em 1em;
-}
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header, .footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.container-body {
-  padding-left: 30px;
-  padding-right: 30px;
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
-/*********************************/
-/** HEADER                      **/
-/*********************************/
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
 }
 
-/*********************************/
-/** JUMBOTRON                   **/
-/*********************************/
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: solid rgba(0, 0, 0, 0.15);
+  border-width: 1px 0;
+  box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1), inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+}
 
-/* Main marketing message and sign up button */
-.jumbotron {
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+.bi {
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
+
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
   text-align: center;
-}
-.jumbotron .img-responsive {
-  margin: 0 auto;
-}
-.jumbotron h1 {
-    font-size: 36px;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
 }
 
-/*********************************/
-/** FOOTER                      **/
-/*********************************/
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-  margin-top: 3em;
+body {
+  background-image: linear-gradient(180deg, #eee, #fff 100px, #fff);
 }
 
-/*********************************/
-/** RESPONSIVE                  **/
-/*********************************/
+.container {
+  max-width: 960px;
+}
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
+.pricing-header {
+  max-width: 700px;
 }
