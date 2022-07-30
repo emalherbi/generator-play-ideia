@@ -59,8 +59,8 @@ _The bower dependencies are installed in another directory._
 
 After finishing the implementation of your application, simply run the following command to deploy your project.
 
-```javascript
-grunt;
+```
+grunt
 ```
 
 ## Contributing
