@@ -134,7 +134,7 @@ module.exports = function (grunt) {
 
     /* replace links to minificated files */
     usemin: {
-      html: ['<%= properties.dist %>/index.html'],
+      html: ['<%= properties.dist %>/*.html', '<%= properties.dist %>/css/*.css'],
       options: {
         dirs: ['<%= properties.dist %>'],
       },

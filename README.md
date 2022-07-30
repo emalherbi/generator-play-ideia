@@ -14,8 +14,6 @@ npm install -g yo
 
 ## Installing generator-play-ideia
 
-[![asciicast](https://asciinema.org/a/13476.png)](https://asciinema.org/a/13476)
-
 To scaffold a web application, you'll need to install the generator:
 
 ```
@@ -35,6 +33,10 @@ yo play-ideia
 ```
 
 ### Layout
+
+- normalize-css: 8.0.1
+- jquery: 3.6.0
+- bootstrap: 5.2.0
 
 ```
 bower_components/
